@@ -208,6 +208,8 @@ class BreadcrumbsManager
         // TODO: After dropping support for Laravel 5.8 and below, change this to return the view directly
         // https://github.com/laravel/framework/pull/29600
         $html = $this->viewFactory->make($view, compact('breadcrumbs'))->render();
+        
+        $html = preg_replace("/\xEF\xBB\xBF/", "", $html);
 
         return new HtmlString($html);
     }
