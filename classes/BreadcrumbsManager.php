@@ -205,8 +205,7 @@ class BreadcrumbsManager
     public function view(string $view, string $name = null, ...$params): HtmlString
     {
         $breadcrumbs = $this->generate($name, ...$params);
-        // TODO: After dropping support for Laravel 5.8 and below, change this to return the view directly
-        // https://github.com/laravel/framework/pull/29600
+
         $html = $this->viewFactory->make($view, compact('breadcrumbs'))->render();
 
         return new HtmlString($html);
