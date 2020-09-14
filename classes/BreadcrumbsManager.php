@@ -15,6 +15,7 @@ use Illuminate\Support\Traits\Macroable;
 /**
  * The main Breadcrumbs singleton class, responsible for registering, generating and rendering breadcrumbs.
  */
+
 class BreadcrumbsManager
 {
     use Macroable;
